@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .events{
+        margin-left: 300px;
+        display: inline-block;
+        margin-top: 20px;
+        /* width: 200px; */
+        background-color: antiquewhite;
+        width: 1000px;
+    }
+</style>
+
+<div class="events">
+    <h1>upcoming events</h1>
+    {% for i in events %}
+    <h2>{{i.id}}  {{i.event_name}}</h2>
+    <p>{{i.event_des}}</p>
+    <p>{{i.event_date}}</p>
+    <hr>
+    {% endfor %}
+
+</div>
+{% endblock%}

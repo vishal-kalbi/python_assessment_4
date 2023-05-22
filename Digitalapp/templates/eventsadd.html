@@ -1,0 +1,33 @@
+{% extends 'secretory_base.html' %}
+{% block content %}
+
+<style>
+    form{
+        margin-left: 250px;
+        width: 800px;
+        height: 400px;
+        /* border: 1px solid violet; */
+        display: inline-block;
+        margin-top: 100px;
+
+    }
+    input{
+        margin: 20px;
+        padding: 10px;
+    }
+</style>
+<form method="post" action="{% url 'eventadd' %}">
+    {% csrf_token %}
+    <label for="name">Event Name:<br></label>
+    <input type="text" id="name" name="event_name" required>
+  
+    <label for="text"><br>Event Desciption: <br></label>
+    <input type="text" id="email" name="event_des" required>
+  
+    <label for="age"><br>Event date:<br></label>
+    <input type="text" id="age" name="event_date" required>
+     <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {% endblock %}  

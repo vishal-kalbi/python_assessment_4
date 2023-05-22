@@ -1,0 +1,33 @@
+{% extends 'secretory_base.html' %}
+{% block content %}
+
+<style>
+    form{
+        margin-left: 250px;
+        width: 800px;
+        height: 400px;
+        /* border: 1px solid violet; */
+        display: inline-block;
+        margin-top: 100px;
+
+    }
+    input{
+        margin: 20px;
+        padding: 10px;
+    }
+</style>
+<form method="post" action="{% url 'noticeadd' %}">
+    {% csrf_token %}
+    <label for="name">Notice title:<br></label>
+    <input type="text" id="name" name="notice_title" required>
+  
+    <label for="text"><br>Notice des: <br></label>
+    <input type="text" id="email" name="notice_des" required>
+  
+    <label for="age"><br>Notice Date<br></label>
+    <input type="text" id="age" name="notice_date" required>
+     <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {% endblock %}  

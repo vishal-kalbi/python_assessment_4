@@ -1,0 +1,26 @@
+{% extends 'watchman_base.html' %}
+{% block content %}
+
+
+<style>
+    .events{
+        margin-left: 300px;
+        display: inline-block;
+        margin-top: 20px;
+        /* width: 200px; */
+        background-color: antiquewhite;
+        width: 1000px;
+    }
+</style>
+
+<div class="events">
+    <h1>Important Notice</h1>
+    {% for i in notice %}
+    <h2>{{i.id}}  {{i.notice_title}}</h2>
+    <p>{{i.notice_des}}</p>
+    <p>{{i.notice_date}}</p>
+    <hr>
+    {% endfor %}
+
+</div>
+{% endblock %}

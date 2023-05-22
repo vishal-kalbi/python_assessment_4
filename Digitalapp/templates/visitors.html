@@ -1,0 +1,33 @@
+{% extends 'watchman_base.html' %}
+{% block content %}
+
+<style>
+    form{
+        margin-left: 250px;
+        width: 800px;
+        height: 400px;
+        /* border: 1px solid violet; */
+        display: inline-block;
+        margin-top: 100px;
+
+    }
+    input{
+        margin: 20px;
+        padding: 10px;
+    }
+</style>
+<form method="post" action="{% url 'visitors' %}">
+    {% csrf_token %}
+    <label for="name">Name:<br></label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="text"><br>contact_no: <br></label>
+    <input type="text" id="email" name="contact_no" required>
+  
+    <label for="age"><br>visited:<br></label>
+    <input type="number" id="age" name="visited" required>
+     <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {% endblock %}  
